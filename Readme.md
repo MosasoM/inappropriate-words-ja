@@ -18,3 +18,14 @@ wort_inserter.py [filename] [-w [words1 words2...]] [-s [souce_file]]
 -w はコマンドラインに入力した単語を追加できます。スペース区切りで複数いけます。  
 -s はSexual.txtと同様に改行で区切られた単語ファイルからimportするときに使います。  
 **ちょっとサボったので同一ディレクトリのファイルからしか今はインポートできません。**
+
+## make_with_masked.py
+一部を伏せ字にした表現を機械的に生成しています。
+2k+1(k>=0)文字目を伏せ字にしたものを機械的に生成します。この生成方法、正直精度はイマイチですが一応作ってみました。
+
+make_with_masked.py [filename]
+
+で実行します。
+
+## Sexual_with_mask.txt
+make_with_masked.pyで生成された伏せ字を含むSexualな単語です。
