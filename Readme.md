@@ -7,13 +7,24 @@
 
 utf-16も考えましたが、現状絵文字のたぐいの殆どがutf-8内に収まっていると考えたのでutf-8です。
 
-# ファイル
+# 資源
 
 ## Sexual.txt
 性的な表現のリストです。内部はソートされてます。
 
+## Sexual_with_mask.txt
+make_with_masked.pyで生成された伏せ字を含むSexualな単語です。
+
+## Sexual_with_bopo.txt
+Sexual.txtのうち、似ている注音符号(ボポモフォ/bopomofo)で文字を置き換えたものです。  
+Sexual.txtから make_with_bopomofo.py 及び bopomofo_map.txtから機械的に生成されています。  
+
 ## offensive.txt
-攻撃的/差別的な表現のリストです。
+攻撃的/差別的な表現のリストです。(暫定版)
+
+-----------------------------------------------------------
+
+# ユーティリティその他
 
 ## word_inserter.py
 単語を追加するときに使っているプログラムです。
@@ -36,10 +47,20 @@ wort_inserter.py [filename] [-w [words1 words2...]] [-s [souce_file]]
 2k+1(k>=0)文字目を伏せ字にしたものを機械的に生成します。この生成方法、正直精度はイマイチですが一応作ってみました。
 
 ```
-make_with_masked.py [filename]
+make_with_masked.py [filename e.g. Sexual.txt]
 ```
 
-で実行します。
+で実行します。生成ファイルは[filename]+"_with_mask"の形です。
 
-## Sexual_with_mask.txt
-make_with_masked.pyで生成された伏せ字を含むSexualな単語です。
+## make_with_bopomofo.py
+似ている注音記号が存在するひらがな/カタカナ/アルファベットを注音記号に置換したものを生成します。  
+make_with_masked.pyと同じく、
+
+```
+make_with_bopomofo.py [filename e.g. Sexual.txt]
+```
+
+で実行します。生成ファイルは[filename]+"_with_bopomofo"の形です。
+  
+## bopomofo_map.txt
+make_with_bopomofo.pyで使用している各種文字と注音記号の対応リストです。
