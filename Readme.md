@@ -60,7 +60,7 @@ make_with_masked.pyと同じく、
 make_with_bopomofo.py [filename e.g. Sexual.txt]
 ```
 
-で実行します。生成ファイルは[filename]+"_with_bopomofo"の形です。
+で実行します。生成ファイルは[filename]+"_with_bopo"の形です。
   
 ## bopomofo_map.txt
 make_with_bopomofo.pyで使用している各種文字と注音記号の対応リストです。
